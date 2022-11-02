@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest
+        xmlns:android="http://schemas.android.com/apk/res/android"
+    package="otang.crashreport">
+
+    <application>
+        <activity
+            android:name=".activity.DefaultErrorActivity"
+            android:exported="true"
+            android:process=":error_activity" />
+
+        <provider
+            android:name=".provider.CrashInitProvider"
+            android:authorities="otang.crashreport.crashinitprovider"
+            android:exported="true"
+            android:initOrder="101" />
+    </application>
+
+</manifest>

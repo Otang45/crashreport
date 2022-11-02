@@ -1,0 +1,134 @@
+/storage/emulated/0/AndroidIDEProjects/CrashReport/app/src/main/AndroidManifest.xml:15: Warning: Redundant label can be removed [RedundantLabel]
+            android:label="@string/app_name"
+            ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+   Explanation for issues of type "RedundantLabel":
+   When an activity does not have a label attribute, it will use the one from
+   the application tag. Since the application has already specified the same
+   label, the label on this activity can be omitted.
+
+/storage/emulated/0/AndroidIDEProjects/CrashReport/app/build.gradle:35: Warning: A newer version of androidx.appcompat:appcompat than 1.4.2 is available: 1.5.1 [GradleDependency]
+    implementation 'androidx.appcompat:appcompat:1.4.2'
+                   ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/storage/emulated/0/AndroidIDEProjects/CrashReport/app/build.gradle:37: Warning: A newer version of com.google.android.material:material than 1.6.1 is available: 1.7.0 [GradleDependency]
+    implementation 'com.google.android.material:material:1.6.1'
+                   ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+   Explanation for issues of type "GradleDependency":
+   This detector looks for usages of libraries where the version you are using
+   is not the current stable release. Using older versions is fine, and there
+   are cases where you deliberately want to stick with an older version.
+   However, you may simply not be aware that a more recent version is
+   available, and that is what this lint check helps find.
+
+/storage/emulated/0/AndroidIDEProjects/CrashReport/app/src/main/res/layout/activity_main.xml:45: Warning: The resource @drawable/mtrl_ic_error is marked as private in com.google.android.material:material:1.6.1 [PrivateResource]
+        app:srcCompat="@drawable/mtrl_ic_error" />
+                       ~~~~~~~~~~~~~~~~~~~~~~~
+
+   Explanation for issues of type "PrivateResource":
+   Private resources should not be referenced; the may not be present
+   everywhere, and even where they are they may disappear without notice.
+
+   To fix this, copy the resource into your own project instead.
+
+/storage/emulated/0/AndroidIDEProjects/CrashReport/app/src/main/res/drawable-v24: Warning: This folder configuration (v24) is unnecessary; minSdkVersion is 26. Merge all the resources in this folder into drawable. [ObsoleteSdkInt]
+/storage/emulated/0/AndroidIDEProjects/CrashReport/app/src/main/res/mipmap-anydpi-v26: Warning: This folder configuration (v26) is unnecessary; minSdkVersion is 26. Merge all the resources in this folder into mipmap-anydpi. [ObsoleteSdkInt]
+/storage/emulated/0/AndroidIDEProjects/CrashReport/app/src/main/res/values-night/themes.xml:13: Warning: Unnecessary; SDK_INT is always >= 21 [ObsoleteSdkInt]
+        <item name="android:statusBarColor" tools:targetApi="l">?attr/colorPrimaryVariant</item>
+                                            ~~~~~~~~~~~~~~~~~~~
+/storage/emulated/0/AndroidIDEProjects/CrashReport/app/src/main/res/values/themes.xml:13: Warning: Unnecessary; SDK_INT is always >= 21 [ObsoleteSdkInt]
+        <item name="android:statusBarColor" tools:targetApi="l">?attr/colorPrimaryVariant</item>
+                                            ~~~~~~~~~~~~~~~~~~~
+
+   Explanation for issues of type "ObsoleteSdkInt":
+   This check flags version checks that are not necessary, because the
+   minSdkVersion (or surrounding known API level) is already at least as high
+   as the version checked for.
+
+   Similarly, it also looks for resources in -vNN folders, such as values-v14
+   where the version qualifier is less than or equal to the minSdkVersion,
+   where the contents should be merged into the best folder.
+
+/data/data/com.itsaky.androidide/files/home/logsender/com/itsaky/androidide/logsender/LogSender.java:21: Warning: Do not place Android context classes in static fields (static reference to LogSender which has field ctx pointing to Context); this is a memory leak [StaticFieldLeak]
+ private static LogSender instance;
+         ~~~~~~
+
+   Explanation for issues of type "StaticFieldLeak":
+   A static field will leak contexts.
+
+   Non-static inner classes have an implicit reference to their outer class.
+   If that outer class is for example a Fragment or Activity, then this
+   reference means that the long-running handler/loader/task will hold a
+   reference to the activity which prevents it from getting garbage
+   collected.
+
+   Similarly, direct field references to activities and fragments from these
+   longer running instances can cause leaks.
+
+   ViewModel classes should never point to Views or non-application Contexts.
+
+/storage/emulated/0/AndroidIDEProjects/CrashReport/app/src/main/res/values/dimens.xml:3: Warning: The resource R.dimen.activity_horizontal_margin appears to be unused [UnusedResources]
+    <dimen name="activity_horizontal_margin">16dp</dimen>
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/storage/emulated/0/AndroidIDEProjects/CrashReport/app/src/main/res/values/dimens.xml:4: Warning: The resource R.dimen.activity_vertical_margin appears to be unused [UnusedResources]
+    <dimen name="activity_vertical_margin">16dp</dimen>
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/storage/emulated/0/AndroidIDEProjects/CrashReport/app/src/main/res/values/dimens.xml:5: Warning: The resource R.dimen.nav_header_vertical_spacing appears to be unused [UnusedResources]
+    <dimen name="nav_header_vertical_spacing">8dp</dimen>
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/storage/emulated/0/AndroidIDEProjects/CrashReport/app/src/main/res/values/dimens.xml:6: Warning: The resource R.dimen.nav_header_height appears to be unused [UnusedResources]
+    <dimen name="nav_header_height">176dp</dimen>
+           ~~~~~~~~~~~~~~~~~~~~~~~~
+
+   Explanation for issues of type "UnusedResources":
+   Unused resources make applications larger and slow down builds.
+
+   The unused resource check can ignore tests. If you want to include
+   resources that are only referenced from tests, consider packaging them in a
+   test source set instead.
+
+   You can include test sources in the unused resource check by setting the
+   system property lint.unused-resources.include-tests=true, and to exclude
+   them (usually for performance reasons), use
+   lint.unused-resources.exclude-tests=true.
+
+/storage/emulated/0/AndroidIDEProjects/CrashReport/app/src/main/res/layout/activity_main.xml:38: Warning: Missing contentDescription attribute on image [ContentDescription]
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+     ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+   Explanation for issues of type "ContentDescription":
+   Non-textual widgets like ImageViews and ImageButtons should use the
+   contentDescription attribute to specify a textual description of the widget
+   such that screen readers and other accessibility tools can adequately
+   describe the user interface.
+
+   Note that elements in application screens that are purely decorative and do
+   not provide any content or enable a user action should not have
+   accessibility content descriptions. In this case, just suppress the lint
+   warning with a tools:ignore="ContentDescription" attribute.
+
+   Note that for text fields, you should not set both the hint and the
+   contentDescription attributes since the hint will never be shown. Just set
+   the hint.
+
+   https://developer.android.com/guide/topics/ui/accessibility/apps#special-cases
+
+/storage/emulated/0/AndroidIDEProjects/CrashReport/app/src/main/res/layout/activity_main.xml:34: Warning: Hardcoded string "Press Button to Test!", should use @string resource [HardcodedText]
+            android:text="Press Button to Test!" />
+            ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+   Explanation for issues of type "HardcodedText":
+   Hardcoding text attributes directly in layout files is bad for several
+   reasons:
+
+   * When creating configuration variations (for example for landscape or
+   portrait) you have to repeat the actual text (and keep it up to date when
+   making changes)
+
+   * The application cannot be translated to other languages by just adding
+   new translations for existing string resources.
+
+   There are quickfixes to automatically extract this hardcoded string into a
+   resource lookup.
+
+0 errors, 15 warnings
