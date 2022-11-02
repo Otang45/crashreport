@@ -1,6 +1,0 @@
-<?xml version="1.0" encoding="utf-8"?>
-<resources>
-    <dimen name="error_detail_text_size">12sp</dimen>
-    <string name="app_name">CrashReport</string>
-    <string name="error_title">Terjadi kesalahan.\nMaaf atas ketidaknyamanan ini.\nSilahkan klik tombol restart untuk memuat ulang, apabila tetap crash klik tombol detail, lalu copy dan dimohon untuk di kirimkan kepada saya, agar bisa saya perbaiki.\n\n Terimakasih</string>
-</resources>
