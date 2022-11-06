@@ -1,3 +1,5 @@
+[![](https://jitpack.io/v/Otang45/crashreport.svg)](https://jitpack.io/#Otang45/crashreport)
+
 ### Usage
 
 Add the Jitpack maven repository if you don't have it yet:
