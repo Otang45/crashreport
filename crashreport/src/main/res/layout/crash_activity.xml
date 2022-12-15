@@ -18,7 +18,8 @@
             android:layout_width="150dp"
             android:layout_height="150dp"
             android:layout_gravity="center_horizontal"
-            android:src="@drawable/ic_bug" />
+            android:src="@drawable/ic_bug"
+            android:tint="?attr/colorPrimary" />
 
         <TextView
             android:layout_width="match_parent"
@@ -26,7 +27,7 @@
             android:layout_marginTop="30dp"
             android:gravity="center_vertical|center|center_horizontal"
             android:text="@string/error_title"
-            android:textColor="?attr/colorPrimary"
+            android:textColor="?attr/colorOnSurface"
             android:textSize="18sp" />
 
         <LinearLayout

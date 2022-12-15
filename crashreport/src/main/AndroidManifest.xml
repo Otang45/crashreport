@@ -1,16 +1,17 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest
-        xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:android="http://schemas.android.com/apk/res/android"
     package="otang.crashreport">
 
     <application>
         <activity
-            android:name=".activity.DefaultErrorActivity"
+            android:theme="@style/Theme.Material3.DayNight.NoActionBar"
+            android:name="otang.crashreport.activity.DefaultErrorActivity"
             android:exported="true"
             android:process=":error_activity" />
 
         <provider
-            android:name=".provider.CrashInitProvider"
+            android:name="otang.crashreport.provider.CrashInitProvider"
             android:authorities="otang.crashreport.crashinitprovider"
             android:exported="true"
             android:initOrder="101" />

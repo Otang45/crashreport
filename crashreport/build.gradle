@@ -5,7 +5,7 @@ plugins {
 
 android {
     compileSdk 32
-    buildToolsVersion "33.0.0"
+    buildToolsVersion "33.0.3"
 
     defaultConfig {
         minSdk 21
@@ -32,9 +32,8 @@ android {
 }
 
 dependencies {
-    implementation 'androidx.appcompat:appcompat:1.4.2'
-    implementation 'androidx.constraintlayout:constraintlayout:2.1.4'
-    implementation 'com.google.android.material:material:1.6.1'
+    implementation 'androidx.appcompat:appcompat:1.5.1'
+    implementation 'com.google.android.material:material:1.7.0'
 }
 
 afterEvaluate {
@@ -44,7 +43,7 @@ afterEvaluate {
                 from components.release
                 groupId = 'com.github.Otang45'
                 artifactId = 'crashreport'
-                version = '1.2'
+                version = '1.3'
             }
         }
     }
