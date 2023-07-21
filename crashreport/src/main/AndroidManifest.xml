@@ -12,7 +12,7 @@
 
         <provider
             android:name="otang.crashreport.provider.CrashInitProvider"
-            android:authorities="otang.crashreport.crashinitprovider"
+            android:authorities=".crashinitprovider"
             android:exported="true"
             android:initOrder="101" />
     </application>
